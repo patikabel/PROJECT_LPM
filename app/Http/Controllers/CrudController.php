@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Petugas;
 use App\Models\Laporan;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,6 +35,13 @@ class CrudController extends Controller
 
         return back()->with('success', 'Data Berhasil dihapus');
 
+    }
+
+    public function deletePetugas($id)
+    {
+        User::where('id', $id)->delete();
+
+        return back();
     }
 
     public function buatPetugas(Request $request){
