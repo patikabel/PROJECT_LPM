@@ -29,7 +29,8 @@ class HomeController extends Controller
     public function petugas(){
         return view('petugas', [
             "title" => "Petugas | Page",
-            "petugas" => User::all()
+            "petugas" => User::all(),
+            'no' => 1
         ]);
     }
 

@@ -63,7 +63,7 @@
                                 <tbody>
                                     @foreach ($petugas as $item)
                                     <tr>
-                                    <th scope="row" class="text-center">{{ $item->id }}</th>
+                                    <th scope="row" class="text-center">{{ $no++ }}</th>
                                     <td class="text-center">{{$item->name}}</td>
                                     <td class="text-center">{{$item->email}}</td>
                                     @auth
