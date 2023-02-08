@@ -42,7 +42,7 @@
                     <li>
                         <a href="/laporan"> <i class="menu-icon fa fa-tasks"></i>Laporan </a>
                     </li>
-                    @if(auth()->user()->role != 'Masyarakat')
+                    @if(auth()->user()->role != 'Masyarakat' && auth()->user()->role != 'Petugas')
                     <li>
                         <a href="/petugas"> <i class="menu-icon fa fa-address-book"></i>Petugas </a>
                     </li>
