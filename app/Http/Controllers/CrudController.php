@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Petugas;
 use App\Models\Laporan;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,6 +37,13 @@ class CrudController extends Controller
 
     }
 
+    public function deletePetugas($id)
+    {
+        User::where('id', $id)->delete();
+
+        return back();
+    }
+
     public function buatPetugas(Request $request){
         $validasiData = $request->validate([
             'name'      => 'required|max:255',
@@ -47,7 +55,7 @@ class CrudController extends Controller
         $validasiData['password'] = Hash::make($validasiData['password']);
 
         User::create($validasiData);
-        return redirect('/petugasgit ')->with('success', 'Registrasi Berhasil');
+        return redirect('/petugas ')->with('success', 'Registrasi Berhasil');
     }
 
 }

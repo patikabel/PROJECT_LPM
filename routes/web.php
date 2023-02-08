@@ -45,6 +45,7 @@ Route::get('create', [CrudController::class, 'create'])->middleware('auth');
 Route::post('create', [CrudController::class, 'store']);
 
 Route::get('/dashboard/delete/{id}', [CrudController::class, 'delete'])->middleware('auth');
+Route::get('/dashboard/petugas/delete/{id}', [CrudController::class, 'deletePetugas'])->middleware('auth');
 
 Route::POST('/admin/register', [CrudController::class, 'buatPetugas'])->middleware('auth');
 // Route::get('/dashboard/edit/{id}' , [CrudController::class, 'edit'])->middleware('auth');

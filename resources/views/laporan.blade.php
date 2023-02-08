@@ -78,35 +78,39 @@
                           <td class="text-center">
                             <a class="btn" style="background-color: #9EA1D4" href="/user/" role="button"><i class="bi bi-eye"></i></a>
                             <a class="btn" style="background-color: #A6BB8D" href="/dashboard/edit/{{ $item->id }}" role="button"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn" style="background-color: #FD8A8A" href="/dashboard/delete/{{ $item->id }}" role="button"><i class="bi bi-trash3"></i></a>
+                            <a class="btn trash-laporan" id="{{$item->id}}" style="background-color: #FD8A8A" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash3"></i></a>
                           </td>
                         </tr>
                         @endif
                         @endauth
                         @endforeach
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Yakin ingin menghapus laporan ?</h1>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <a type="button" id="button-trash-modal" href="" class="btn btn-primary">Delete</button>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </tbody>
                 </table>
                     </div>
                 </div>
             </div>
-            {{-- <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active"><i class="fa fa-dashboard"></i></li>
-                        </ol>
-                    </div>
-                </div>
-            </div> --}}
+
+            <script>
+                $('.trash-laporan').click(function(){
+                    const getId = $(this).attr('id')
+                    $('#button-trash-modal').attr('href', `/dashboard/delete/${getId}`)
+                })
+            </script>
         </div>
-
-        {{-- <div class="content mt-3">
-
-            <div class="animated fadeIn">
-                Isi home
-            </div>
-
-        </div> --}}
     </div>
 @endsection
 
