@@ -17,7 +17,6 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -33,7 +32,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href=""><b>{{ auth()->user()->role}} Page</b></a>
-                <a class="navbar-brand hidden" href="">M</a>
+                <a class="navbar-brand hidden" href=""></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -49,17 +48,35 @@
                         <a href="/petugas"> <i class="menu-icon fa fa-address-book"></i>Petugas </a>
                     </li>
                     @endif
-                    <li>
-                        <a href="/logout"> <i class="menu-icon fa fa-sign-out"></i>Log-Out </a>
-                    </li>
+                    
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
+        <div class="box-logout">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                 <i class="menu-icon fa fa-sign-out" aria-hidden="true"> Log-out</i>
+            </button>   
+        </div>
     </aside><!-- /#left-panel -->
 
 
     <br>
     @yield('content')
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title fs-5" id="exampleModalLabel">Anda Yakin Ingin Keluar?</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-danger"><a href="/logout" class="text-light">Keluar</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>

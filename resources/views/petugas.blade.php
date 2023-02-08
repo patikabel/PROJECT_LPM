@@ -6,7 +6,6 @@
         <header id="header" class="header">
             <div class="header-menu">
                 <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                     <div class="header-left">
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
@@ -83,7 +82,7 @@
                                         <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Yakin ingin menghapus Data Petugas ?</h1>
+                                            <h4 class="modal-title fs-5" id="exampleModalLabel">Yakin Ingin Menghapus Data Petugas ?</h4>
                                             {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
                                             </div>
                                             <div class="modal-footer">
