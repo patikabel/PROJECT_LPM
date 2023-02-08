@@ -47,7 +47,7 @@ class CrudController extends Controller
         $validasiData['password'] = Hash::make($validasiData['password']);
 
         User::create($validasiData);
-        return redirect('/petugasgit ')->with('success', 'Registrasi Berhasil');
+        return redirect('/petugas ')->with('success', 'Registrasi Berhasil');
     }
 
 }

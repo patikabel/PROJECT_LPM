@@ -22,7 +22,8 @@ class HomeController extends Controller
     public function laporan(){
         return view('laporan', [
             "title" => "Laporan | Page",
-            "data" => Laporan::all()
+            "data" => Laporan::all(),
+            'no' => 1
         ]);
     }
     public function petugas(){
@@ -31,11 +32,11 @@ class HomeController extends Controller
             "petugas" => User::all()
         ]);
     }
-    
+
 
     public function home(Request $request){
         return view('home', [
-            "title" => "Laporan | Page"
+            "title" => "Laporan | Page",
         ]);
     }
 

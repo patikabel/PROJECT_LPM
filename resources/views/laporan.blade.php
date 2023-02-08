@@ -64,7 +64,7 @@
                     <tbody>
                         @foreach ($data as $item)
                         <tr>
-                          <th scope="row" class="text-center">{{ $item->id }}</th>
+                          <th scope="row" class="text-center">{{ $no++ }}</th>
                           <td class="text-center">{{$item->nama}}</td>
                           <td class="text-center">{{$item->alamat}}</td>
                           <td class="text-center">{{$item->nomor}}</td>
