@@ -6,7 +6,6 @@
         <header id="header" class="header">
             <div class="header-menu">
                 <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                     <div class="header-left">
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
@@ -78,17 +77,17 @@
                           <td class="text-center">
                             <a class="btn" style="background-color: #9EA1D4" href="/user/" role="button"><i class="bi bi-eye"></i></a>
                             <a class="btn" style="background-color: #A6BB8D" href="/dashboard/edit/{{ $item->id }}" role="button"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn trash-laporan" id="{{$item->id}}" style="background-color: #FD8A8A" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash3"></i></a>
+                            <a class="btn trash-laporan" id="{{$item->id}}" style="background-color: #FD8A8A" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i class="bi bi-trash3"></i></a>
                           </td>
                         </tr>
                         @endif
                         @endauth
                         @endforeach
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Yakin ingin menghapus laporan ?</h1>
+                                <h4 class="modal-title fs-5" id="exampleModalLabel">Yakin Ingin Menghapus Laporan ?</h4>
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

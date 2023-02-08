@@ -176,3 +176,13 @@ td,
 th {
   padding: 0;
 }
+.left-panel{
+  position: relative;
+}
+.box-logout {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  right: 90px;
+}
