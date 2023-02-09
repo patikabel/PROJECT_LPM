@@ -67,6 +67,8 @@ class HomeController extends Controller
 
 
         Laporan::create($finaldata);
+        return redirect('/home')->with('berhasil', 'Laporan Berhasil Terkirim');
+
 
 
         return back();

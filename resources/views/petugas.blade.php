@@ -45,6 +45,14 @@
                             <h4 class="mt-4 text-center"><b>DAFTAR PETUGAS</b></h4>
                             <br>
                             <a class="btn btn-outline-success" href="/create" role="button">CREATE</a>
+                            @if (session()->has('success'))
+                            <div class="d-flex justify-content-center">
+                                <div class="alert alert-success alert-dismissible fade show mb-3" style="width: 18rem;" role="alert">
+                                    {{session('success')}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            </div>
+                            @endif
                             <br>
                             <br>
                             <table class="table">

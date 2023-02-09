@@ -4,6 +4,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col col-md-10">
+                @if (session()->has('berhasil'))
+                <div class="d-flex justify-content-center">
+                    <div class="alert alert-success alert-dismissible fade show mb-3" style="width: 30rem;" role="alert">
+                        {{session('berhasil')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                @endif
                 <div class="card position-relative top-50 start-50 translate-middle" style="width: 30rem;">
                     <div class="card-body">
                         <form action="/data" enctype="multipart/form-data" method="POST">
