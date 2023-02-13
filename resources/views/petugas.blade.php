@@ -69,16 +69,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($petugas as $item)
+                                    @foreach ($petugas as $index => $item)
                                     <tr>
-                                    <th scope="row" class="text-center">{{ $no++ }}</th>
+                                    <th scope="row" class="text-center">{{ $index + $petugas->firstItem() }}</th>
                                     <td class="text-center">{{$item->name}}</td>
                                     <td class="text-center">{{$item->email}}</td>
                                     @auth
                                     @if(auth()->user()->role == 'Administrator')
                                     <td class="text-center">
-                                        <a class="btn" style="background-color: #9EA1D4" href="/user/" role="button"><i class="bi bi-eye"></i></a>
-                                        <a class="btn" style="background-color: #A6BB8D" href="/dashboard/edit/{{ $item->id }}" role="button"><i class="bi bi-pencil-square"></i></a>
                                         <a class="btn trash-petugas" id="{{$item->id}}" style="background-color: #FD8A8A" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash3"></i></a>
                                     </td>
                                     </tr>
@@ -103,6 +101,17 @@
                                     </div>
                                 </tbody>
                             </table>
+                            <div>
+                                <div>
+                                    Showing Page
+                                    {{ $petugas->currentPage() }}
+                                    of
+                                    {{ $petugas->lastPage() }}
+                                </div>
+                                <div class="pull-right">
+                                    {{ $petugas->links() }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -50,4 +50,4 @@ Route::get('/dashboard/petugas/delete/{id}', [CrudController::class, 'deletePetu
 Route::POST('/admin/register', [CrudController::class, 'buatPetugas'])->middleware('auth');
 // Route::get('/dashboard/edit/{id}' , [CrudController::class, 'edit'])->middleware('auth');
 // Route::post('/dashboard/edit/{id}', [CrudController::class, 'update'])->middleware('auth');
-// Route::get('/dashboard/detail/{id}', [CrudController::class, 'detail'])->middleware('auth');
+Route::get('detail/{id}', [CrudController::class, 'detail'])->middleware('auth');

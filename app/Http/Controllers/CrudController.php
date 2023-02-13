@@ -58,4 +58,14 @@ class CrudController extends Controller
         return redirect('/petugas ')->with('success', 'Registrasi Berhasil');
     }
 
+
+    public function detail($id){
+        return view('detail', [
+            'title' => 'Detail | Crud',
+            "data" => Laporan::where('id', $id)->first()
+        ]);
+
+
+    }
+
 }

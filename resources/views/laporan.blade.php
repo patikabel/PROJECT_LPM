@@ -76,7 +76,7 @@
                               @auth
                               @if(auth()->user()->role == 'Administrator' || auth()->user()->role == 'Petugas')
                               <td class="text-center">
-                                <a class="btn" style="background-color: #9EA1D4" href="/user/" role="button"><i class="bi bi-eye"></i></a>
+                                <a class="btn" style="background-color: #9EA1D4" href="detail/{{ $item->id  }}" role="button"><i class="bi bi-eye"></i></a>
                                 <a class="btn" style="background-color: #A6BB8D" href="/dashboard/edit/{{ $item->id }}" role="button"><i class="bi bi-pencil-square"></i></a>
                                 <a class="btn trash-laporan" id="{{$item->id}}" style="background-color: #FD8A8A" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i class="bi bi-trash3"></i></a>
                               </td>
@@ -102,10 +102,10 @@
                     </table>
                     <div>
                         <div>
-                            Showing
-                            {{ $data->firstItem() }}
+                            Showing Page
+                            {{ $data->currentPage() }}
                             of
-                            {{ $data->lastItem() }}
+                            {{ $data->lastPage() }}
                         </div>
                         <div class="pull-right">
                             {{ $data->links() }}
