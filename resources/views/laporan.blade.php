@@ -62,9 +62,9 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data as $item)
+                            @foreach ($data as $index => $item)
                             <tr>
-                              <th scope="row" class="text-center">{{ $no++ }}</th>
+                              <th scope="row" class="text-center">{{ $index + $data->firstItem() }}</th>
                               <td class="text-center">{{$item->nama}}</td>
                               <td class="text-center">{{$item->alamat}}</td>
                               <td class="text-center">{{$item->nomor}}</td>
@@ -100,6 +100,17 @@
                             </div>
                         </tbody>
                     </table>
+                    <div>
+                        <div>
+                            Showing
+                            {{ $data->firstItem() }}
+                            of
+                            {{ $data->lastItem() }}
+                        </div>
+                        <div class="pull-right">
+                            {{ $data->links() }}
+                        </div>
+                    </div>
                         </div>
                     </div>
                 </div>

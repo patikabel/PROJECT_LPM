@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use Illuminate\Http\Request;
 use App\Models\Laporan;
@@ -22,14 +22,14 @@ class HomeController extends Controller
     public function laporan(){
         return view('laporan', [
             "title" => "Laporan | Page",
-            "data" => Laporan::all(),
+            "data" => Laporan::paginate(5),
             'no' => 1
         ]);
     }
     public function petugas(){
         return view('petugas', [
             "title" => "Petugas | Page",
-            "petugas" => User::all(),
+            "petugas" => User::paginate(5),
             'no' => 1
         ]);
     }
@@ -67,7 +67,7 @@ class HomeController extends Controller
 
 
         Laporan::create($finaldata);
-        return redirect('/home')->with('berhasil', 'Laporan Berhasil Terkirim');
+        return redirect('/home')->with('berhasil', 'Laporan Terkirim, Mohon Login Untuk Melihat Prosesnya!');
 
 
 

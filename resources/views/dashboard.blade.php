@@ -36,12 +36,16 @@
 
     </header><!-- /header -->
 
-    <div class="container">
-        <div class="col">
-            <div class="row">
-                <p>
-                    <h4>Selamat Datang <b>{{Auth::user()->name}}</b>, Anda Login sebagai <b>{{Auth::user()->role}}</b>.</h4>
-                </p>
+    <div class="breadcrumbs">
+        <div class="row">
+            <div class="col">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <p>
+                            <h4>Selamat Datang <b>{{Auth::user()->name}}</b>, Anda Login sebagai <b>{{Auth::user()->role}}</b>.</h4>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
