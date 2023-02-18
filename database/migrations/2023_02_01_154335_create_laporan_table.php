@@ -21,6 +21,7 @@ class CreateLaporanTable extends Migration
             $table->text('laporan');
             $table->date('tanggal');
             $table->string('upload');
+            $table->string('tanggapan')->nullable();
             $table->timestamps();
         });
     }

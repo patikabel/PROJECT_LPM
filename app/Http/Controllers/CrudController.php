@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Petugas;
+use App\Models\Tanggapan;
 use App\Models\Laporan;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,6 +67,13 @@ class CrudController extends Controller
         ]);
 
 
+    }
+
+    public function edit($id){
+        return view('edit', [
+            'title' => 'Edit | Crud',
+            "data" => Laporan::where('id', $id)->first()
+        ]);
     }
 
 }

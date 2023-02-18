@@ -36,6 +36,7 @@
                             </div>
                         <p>Belum punya akun? <a href="/register">daftar disini!</a></p>
                         <button type="submit" class="submit btn btn-outline-dark">Submit</button>
+                        <a class="btn btn-outline-dark justfy-content-center" href="{{'/auth/redirect'}}"><i class="bi bi-google"></i> Login With Google</a>
                     </form>
 
                 </div>

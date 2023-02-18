@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\TanggapanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,9 @@ Route::get('/dashboard/delete/{id}', [CrudController::class, 'delete'])->middlew
 Route::get('/dashboard/petugas/delete/{id}', [CrudController::class, 'deletePetugas'])->middleware('auth');
 
 Route::POST('/admin/register', [CrudController::class, 'buatPetugas'])->middleware('auth');
-// Route::get('/dashboard/edit/{id}' , [CrudController::class, 'edit'])->middleware('auth');
-// Route::post('/dashboard/edit/{id}', [CrudController::class, 'update'])->middleware('auth');
+Route::get('edit/{id}' , [CrudController::class, 'edit'])->middleware('auth');
+Route::post('/tanggapan/createOrUpdate/{id}', [TanggapanController::class, 'createOrUpdate'])->name('tanggapan.createOrUpdate');
 Route::get('detail/{id}', [CrudController::class, 'detail'])->middleware('auth');
+
+Route::get('/auth/redirect', [LoginController::class,'redirectToProvider']);
+Route::get('/auth/callback', [LoginController::class,'handleProviderCallback']);
